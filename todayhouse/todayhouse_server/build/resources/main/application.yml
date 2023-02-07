@@ -1,0 +1,66 @@
+server:
+  port: 8080
+
+spring:
+  security:
+    user:
+      name: root
+      password: 1234
+      roles: ADMIN
+    oauth2:
+      client:
+        provider:
+          kakao:
+            authorization-uri: https://kauth.kakao.com/oauth/authorize
+            user-name-attribute: id
+            token-uri: https://kauth.kakao.com/oauth/token
+            user-info-uri: https://kapi.kakao.com/v2/user/me
+        registration:
+          kakao:
+            client-name: kakao
+            authorization-grant-type: authorization_code
+            redirect-uri: https://todayhouse.shop/login/oauth2/code/kakao
+#            redirect-uri: http://localhost:9000/login/oauth2/code/kakao
+            client-id: e8435cddee04055cd1bade598c5fdf10
+            client-secret: Ms3I3UjuwEdEIsERyipgSIzstRbjIBDt
+            client-authentication-method: POST
+            scope: profile_nickname, profile_image, account_email
+
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+    defer-datasource-initialization: true
+  sql:
+    init:
+      mode: never
+  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306/todayhouse
+#    username: root
+#    password: 413730
+    url: jdbc:mysql://rc12-todayhouse-database.chinbytq8qtb.ap-northeast-2.rds.amazonaws.com:3306/todayhouse
+    username: admin
+    password: Risingtest123
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+logging:
+  level:
+    sql: info
+    org.springframework: info
+    org.springframework.security: info
+    today.house: debug
+
+security.headers.frame: false # http.headers() 무효화
+secret:
+  key:
+    oauth.password: tyOzLcghaUe6dpOVu8qA
+    remember-me: 8092242771
+    jwt: h8AfgSHf11odI3yLRqetAytlzRfY6GEnXvWow0aeHq9zuUNQNygY29RaQ3G4
+    user.password: iGVcRfqUdUqjJ69msD0YEAg2ISAx9s4w0BqV9TInL25Kynp0HQy7IxXXnJ8tHb21FNHPF5HM5FG2suyrQhE7G54vGfNn8rTikvnj
