@@ -1,6 +1,9 @@
 # TodayHouse-Clone
 오늘의 집_클론코딩
 # 전체 구현 내용
+## Todayhouse ERD
+![schema-erd-final](https://user-images.githubusercontent.com/86183856/218312021-c77fe482-3f73-4c72-9bf0-f0e8c8d7c485.png)
+
 ## 나의 작업 내용
 - Spring Security와 JWT를 이용한 로그인 구현
 - OAuth2를 이용한 소셜로그인(카카오) 구현
@@ -35,6 +38,8 @@
 
 ## 루카스 작업 내용
 [루카스 Github](https://github.com/yju0808)
+- AWS Ubuntu 설정
+- RDS 
 ### 좋아요
 - 내 하트 목록 확인하기
 - 좋아요 누르기
